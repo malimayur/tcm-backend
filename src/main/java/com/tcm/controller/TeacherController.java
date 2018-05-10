@@ -32,7 +32,7 @@ public class TeacherController {
 	}
 	
 	@PostMapping(value="/createteacher")
-	public Teacher createCustomer(@RequestBody Teacher teacher) {
+	public Teacher createTeacher(@RequestBody Teacher teacher) {
 		Teacher teacherObj = new Teacher();
 		teacherObj.setFirstName(teacher.getFirstName());
 		teacherObj.setLastName(teacher.getLastName());

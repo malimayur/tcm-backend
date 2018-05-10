@@ -12,8 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "attendance")
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Attendance implements Serializable {
 
 	private static final long serialVersionUID = -3009157732242241604L;
@@ -25,14 +29,17 @@ public class Attendance implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
     private Student student;
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+    private Teacher teacher;
+	
 	@Column(name = "date")
 	private Date date;
 	
 	@Column(name = "intime")
-	private long inTime;
+	private String inTime;
 	
 	@Column(name = "outtime")
-	private long outTime;
+	private String outTime;
 	
 	public Attendance() {
 	}
@@ -53,6 +60,14 @@ public class Attendance implements Serializable {
 		this.student = student;
 	}
 
+	public Teacher getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
+
 	public Date getDate() {
 		return date;
 	}
@@ -61,19 +76,19 @@ public class Attendance implements Serializable {
 		this.date = date;
 	}
 
-	public long getInTime() {
+	public String getInTime() {
 		return inTime;
 	}
 
-	public void setInTime(long inTime) {
+	public void setInTime(String inTime) {
 		this.inTime = inTime;
 	}
 
-	public long getOutTime() {
+	public String getOutTime() {
 		return outTime;
 	}
 
-	public void setOutTime(long outTime) {
+	public void setOutTime(String outTime) {
 		this.outTime = outTime;
 	}
 	

@@ -24,6 +24,7 @@ public class AttendanceController {
 	public Attendance createAttendance(@RequestBody Attendance attendance) {
 		Attendance attendanceObj = new Attendance();
 		attendanceObj.setStudent(attendance.getStudent());
+		attendanceObj.setTeacher(attendance.getTeacher());
 		attendanceObj.setDate(attendance.getDate());
 		attendanceObj.setInTime(attendance.getInTime());
 		attendanceObj.setOutTime(attendance.getOutTime());

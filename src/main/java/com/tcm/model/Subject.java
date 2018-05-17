@@ -1,12 +1,16 @@
 package com.tcm.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,6 +28,9 @@ public class Subject implements Serializable {
 	@NotEmpty
 	@Column(name = "name")
 	private String name;
+	
+	@OneToMany(mappedBy = "subject", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Enrollment> enrollment;
 
 	public long getId() {
 		return id;
@@ -39,6 +46,14 @@ public class Subject implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<Enrollment> getEnrollment() {
+		return enrollment;
+	}
+
+	public void setEnrollment(Set<Enrollment> enrollment) {
+		this.enrollment = enrollment;
 	}
 
 	@Override

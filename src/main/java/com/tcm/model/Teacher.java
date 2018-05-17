@@ -40,6 +40,9 @@ public class Teacher implements Serializable {
 	
 	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Attendance> attendance;
+	
+	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Enrollment> enrollment;
 
 	public Teacher() {
 	}
@@ -98,6 +101,14 @@ public class Teacher implements Serializable {
 
 	public void setAttendance(Set<Attendance> attendance) {
 		this.attendance = attendance;
+	}
+
+	public Set<Enrollment> getEnrollment() {
+		return enrollment;
+	}
+
+	public void setEnrollment(Set<Enrollment> enrollment) {
+		this.enrollment = enrollment;
 	}
 
 	@Override

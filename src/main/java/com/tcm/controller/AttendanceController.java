@@ -37,9 +37,9 @@ public class AttendanceController {
 		return attendance;
 	}
 	
-	@GetMapping(value="/getAttendanceByLastName/{lastName}" ,  produces=MediaType.APPLICATION_JSON_VALUE)
+	/*@GetMapping(value="/getAttendanceByLastName/{lastName}" ,  produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Attendance> getAttendance(@PathVariable String lastName) {
 		List<Attendance> attendance = repository.findByLastName(lastName);
 		return attendance;
-	}
+	}*/
 }

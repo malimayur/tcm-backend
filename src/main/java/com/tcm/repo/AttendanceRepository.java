@@ -9,5 +9,5 @@ import com.tcm.model.Attendance;
 
 @RepositoryRestResource(collectionResourceRel = "attendance", path = "attendance")
 public interface AttendanceRepository extends PagingAndSortingRepository<Attendance, Long> {
-	List<Attendance> findByLastName(String lastName);
+	//List<Attendance> findByLastName(String lastName);
 }

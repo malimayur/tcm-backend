@@ -9,5 +9,5 @@ import com.tcm.model.Enrollment;
 
 @RepositoryRestResource(collectionResourceRel = "enrollment", path = "enrollment")
 public interface EnrollmentRepository extends PagingAndSortingRepository<Enrollment, Long> {
-	List<Enrollment> findByLastName(String lastName);
+	//List<Enrollment> findByLastName(String lastName);
 }

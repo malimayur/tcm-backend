@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tcm.model.Attendance;
 import com.tcm.model.Enrollment;
 import com.tcm.repo.EnrollmentRepository;
 import com.tcm.repo.StudentRepository;
@@ -46,9 +45,9 @@ public class EnrollmentController {
 		return enrollment;
 	}
 	
-	@GetMapping(value="/getEnrollmentByLastName/{lastName}" ,  produces=MediaType.APPLICATION_JSON_VALUE)
+	/*@GetMapping(value="/getEnrollmentByLastName/{lastName}" ,  produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Enrollment> getEnrollment(@PathVariable String lastName) {
 		List<Enrollment> enrollment = repository.findByLastName(lastName);
 		return enrollment;
-	}
+	}*/
 }
